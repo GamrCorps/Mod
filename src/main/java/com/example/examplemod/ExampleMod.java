@@ -12,8 +12,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
 public class ExampleMod
 {
-    public static final String MODID = "examplemod";
-    public static final String VERSION = "1.0";
+    public static final String MODID = "enigma";
+    public static final String VERSION = "081615r0";
     public static final Block testBlock = new TestBlock().setHardness(50F).setStepSound(Block.soundTypeAnvil).setBlockName("testBlock").setCreativeTab(CreativeTabs.tabRedstone);
     
     @EventHandler
