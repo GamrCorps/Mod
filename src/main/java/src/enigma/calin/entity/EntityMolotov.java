@@ -15,32 +15,27 @@ import java.util.Random;
  * Created by Calin on 8/17/2015.
  */
 public class EntityMolotov extends EntityThrowable {
-    public EntityMolotov(World world)
-    {
+    public EntityMolotov(World world) {
         super(world);
     }
 
-    public EntityMolotov(World world, EntityLivingBase xBase)
-    {
+    public EntityMolotov(World world, EntityLivingBase xBase) {
         super(world, xBase);
     }
 
-    public EntityMolotov(World world, double x, double y, double z)
-    {
+    public EntityMolotov(World world, double x, double y, double z) {
         super(world, x, y, z);
     }
-    protected void onImpact(MovingObjectPosition xPosition)
-    {
 
-
-        for (int a = 0; a < 20; a++)
-        {
+    protected void onImpact(MovingObjectPosition xPosition) {
+        this.playSound("dig.glass", 1f, 0f);
+        for (int a = 0; a < 20; a++) {
             Random x = new Random();
             int ax = x.nextInt(6);
             int bx = x.nextInt(6);
             int cx = x.nextInt(6);
-            if (this.worldObj.getBlock((int)this.posX + ax - 3,(int)this.posY + cx - 3,(int)this.posZ - bx + 3) == Blocks.air){
-                this.worldObj.setBlock((int)this.posX + ax - 3,(int)this.posY + cx - 3,(int)this.posZ - bx + 3, Blocks.fire, 0, 2);
+            if (this.worldObj.getBlock((int) this.posX + ax - 3, (int) this.posY + cx - 3, (int) this.posZ - bx + 3) == Blocks.air) {
+                this.worldObj.setBlock((int) this.posX + ax - 3, (int) this.posY + cx - 3, (int) this.posZ - bx + 3, Blocks.fire, 0, 2);
             }
         }
         if (xPosition.entityHit != null) {
@@ -57,13 +52,11 @@ public class EntityMolotov extends EntityThrowable {
                 this.setDead();
             }
         }
-        for (int j = 0; j < 8; ++j)
-        {
+        for (int j = 0; j < 8; ++j) {
             this.worldObj.spawnParticle("snowballpoof", this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
         }
 
-        if (!this.worldObj.isRemote)
-        {
+        if (!this.worldObj.isRemote) {
             this.setDead();
         }
     }
