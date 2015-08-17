@@ -20,7 +20,7 @@ public class BlockPlayerTracker extends BlockContainer {
         super(Material.ground);
         setHardness(50F);
         setStepSound(Block.soundTypeAnvil);
-        setBlockName("testBlock");
+        setBlockName("blockPlayerTracker");
         setCreativeTab(CreativeTabs.tabRedstone);
     }
 
