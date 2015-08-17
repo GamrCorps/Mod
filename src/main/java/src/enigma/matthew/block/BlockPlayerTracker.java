@@ -1,8 +1,8 @@
-package src.enigma.block;
+package src.enigma.matthew.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import src.enigma.tileentity.TileEntityPlayerTracker;
+import src.enigma.matthew.tileentity.TileEntityPlayerTracker;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;

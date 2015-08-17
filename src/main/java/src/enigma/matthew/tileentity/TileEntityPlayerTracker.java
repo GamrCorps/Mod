@@ -1,11 +1,7 @@
-package src.enigma.tileentity;
+package src.enigma.matthew.tileentity;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.Packet;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 
