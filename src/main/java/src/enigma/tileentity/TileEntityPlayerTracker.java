@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package src.enigma.tileentity;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import net.minecraft.client.gui.GuiScreen;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Matthew on 8/16/2015.
  */
-public class TestTileEntity extends TileEntity {
+public class TileEntityPlayerTracker extends TileEntity {
     public double X = 0, Y = 0, Z = 0;
     public static final double XD = 0, YD = 0, ZD = 0;
 

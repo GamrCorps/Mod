@@ -1,5 +1,8 @@
-package com.example.examplemod;
+package src.enigma.block;
 
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import src.enigma.tileentity.TileEntityPlayerTracker;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,34 +14,31 @@ import net.minecraft.world.World;
 /**
  * Created by Matthew on 8/16/2015.
  */
-public class TestBlock extends BlockContainer {
+public class BlockPlayerTracker extends BlockContainer {
 
-    public TestBlock() {
+    public BlockPlayerTracker() {
         super(Material.ground);
+        setHardness(50F);
+        setStepSound(Block.soundTypeAnvil);
+        setBlockName("testBlock");
+        setCreativeTab(CreativeTabs.tabRedstone);
     }
 
     @Override
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-        return new TestTileEntity();
+        return new TileEntityPlayerTracker();
     }
-
-    /*
-    @Override
-    public int getRenderType() {
-        return 3;
-    }
-    */
 
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta, float fx, float fy, float fz) {
         if (player.worldObj.isRemote) return false;
         try {
             if (player.getHeldItem().getItem().equals(Items.stick)) {
-                ((TestTileEntity) world.getTileEntity(x, y, z)).playerName = player.getDisplayName();
+                ((TileEntityPlayerTracker) world.getTileEntity(x, y, z)).playerName = player.getDisplayName();
                 player.addChatComponentMessage(new ChatComponentText("Player set to: " + player.getDisplayName()));
                 return true;
             } else if (player.getHeldItem() != null) {
-                player.addChatComponentMessage(new ChatComponentText(((TestTileEntity) world.getTileEntity(x, y, z)).getStringMessage()));
+                player.addChatComponentMessage(new ChatComponentText(((TileEntityPlayerTracker) world.getTileEntity(x, y, z)).getStringMessage()));
                 return true;
             }
         } catch (Exception e) {
