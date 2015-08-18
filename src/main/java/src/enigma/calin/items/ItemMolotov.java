@@ -1,4 +1,4 @@
-package src.enigma.calin.item;
+package src.enigma.calin.items;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -7,9 +7,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import src.enigma.calin.entity.EntityMolotov;
 import src.enigma.calin.lib.Constants;
+import src.enigma.mod.EnigmaMod;
 
 public class ItemMolotov extends Item {
     public ItemMolotov()
@@ -17,6 +19,7 @@ public class ItemMolotov extends Item {
         super();
         this.maxStackSize = 8;
         this.setCreativeTab(CreativeTabs.tabCombat);
+        this.setTextureName(EnigmaMod.MODID + ":" + "molotov");
     }
 
 
@@ -40,5 +43,10 @@ public class ItemMolotov extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
         this.itemIcon = iconRegister.registerIcon(Constants.MODID + ":molotov");
+    }
+
+    @Override
+    public IIcon getIconFromDamage(int p_77617_1_) {
+        return this.itemIcon;
     }
 }

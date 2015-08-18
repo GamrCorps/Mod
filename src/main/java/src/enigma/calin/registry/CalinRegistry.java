@@ -3,7 +3,7 @@ package src.enigma.calin.registry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import src.enigma.calin.item.ItemMolotov;
+import src.enigma.calin.items.ItemMolotov;
 import src.enigma.calin.lib.Constants;
 
 /**

@@ -1,4 +1,4 @@
-package src.enigma.calin.item;
+package src.enigma.calin.items;
 
 /**
  * Created by Calin on 8/17/2015.

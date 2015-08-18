@@ -60,4 +60,5 @@ public class EntityMolotov extends EntityThrowable {
             this.setDead();
         }
     }
+
 }
