@@ -11,14 +11,13 @@ import src.enigma.calin.lib.Constants;
  */
 public class CalinRegistry {
 
-    public static Item itemMolotov;
+    public static Item itemMolotov = new ItemMolotov().setUnlocalizedName(Constants.nameMolotov).setCreativeTab(CreativeTabs.tabCombat);
 
     public static void preInit(){
 
     }
 
     public static void init(){
-        itemMolotov = new ItemMolotov().setUnlocalizedName(Constants.nameMolotov).setCreativeTab(CreativeTabs.tabCombat);
         registerItems();
     }
 

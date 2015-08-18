@@ -4,13 +4,12 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import src.enigma.calin.entity.EntityMolotov;
 import src.enigma.calin.registry.CalinRegistry;
-import src.enigma.calin.render.RenderMolotov;
 
 public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(){
         super.preInit();
-        //RenderingRegistry.registerEntityRenderingHandler(EntityMolotov.class, new RenderSnowball(CalinRegistry.itemMolotov,0));
+        RenderingRegistry.registerEntityRenderingHandler(EntityMolotov.class, new RenderSnowball(CalinRegistry.itemMolotov, 0));
     }
 
     @Override
