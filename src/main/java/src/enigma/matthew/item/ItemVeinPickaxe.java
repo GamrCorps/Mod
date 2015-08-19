@@ -41,8 +41,8 @@ public class ItemVeinPickaxe extends ItemPickaxe {
     }
 
     private void breakBlock(World gameWorld_, Block block, int x, int y, int z) {
-        ItemStack dropedItemStack = new ItemStack( block.getItemDropped(0, gameWorld_.rand, 0));
-        EntityItem drop = new EntityItem(gameWorld_, x, y, z, dropedItemStack);
+        ItemStack droppedItemStack = new ItemStack( block.getItemDropped(0, gameWorld_.rand, 0));
+        EntityItem drop = new EntityItem(gameWorld_, x, y, z, droppedItemStack);
         gameWorld_.spawnEntityInWorld(drop);
         gameWorld_.setBlockToAir(x, y, z);
     }
