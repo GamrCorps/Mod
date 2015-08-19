@@ -2,6 +2,7 @@ package src.enigma.matthew.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
+import net.minecraft.block.BlockRedstoneOre;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemPickaxe;
@@ -23,7 +24,7 @@ public class ItemVeinPickaxe extends ItemPickaxe {
         while (true) {
             if (queue.isEmpty()) break;
             int[] coords = queue.getNext();
-            if (world.getBlock(coords[0], coords[1], coords[2]) instanceof BlockOre) {
+            if (world.getBlock(coords[0], coords[1], coords[2]) instanceof BlockOre || world.getBlock(coords[0], coords[1], coords[2]) instanceof BlockRedstoneOre) {
                 Block block1 = world.getBlock(coords[0], coords[1], coords[2]);
                 breakBlock(world,world.getBlock(coords[0], coords[1], coords[2]), coords[0], coords[1], coords[2]);
                 for (int i = -1; i <= 1; i++) {
