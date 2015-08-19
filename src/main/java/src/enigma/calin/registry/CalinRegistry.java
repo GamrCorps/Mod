@@ -6,9 +6,6 @@ import net.minecraft.item.Item;
 import src.enigma.calin.items.ItemMolotov;
 import src.enigma.calin.lib.Constants;
 
-/**
- * Created by Matthew on 8/16/2015.
- */
 public class CalinRegistry {
 
     public static Item itemMolotov = new ItemMolotov().setUnlocalizedName(Constants.nameMolotov).setCreativeTab(CreativeTabs.tabCombat);

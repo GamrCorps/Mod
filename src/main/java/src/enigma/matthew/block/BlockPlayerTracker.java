@@ -11,9 +11,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
-/**
- * Created by Matthew on 8/16/2015.
- */
 public class BlockPlayerTracker extends BlockContainer {
 
     public BlockPlayerTracker() {

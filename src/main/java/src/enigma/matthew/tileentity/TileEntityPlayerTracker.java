@@ -7,9 +7,6 @@ import net.minecraft.tileentity.TileEntity;
 
 import java.util.List;
 
-/**
- * Created by Matthew on 8/16/2015.
- */
 public class TileEntityPlayerTracker extends TileEntity {
     public double X = 0, Y = 0, Z = 0;
     public static final double XD = 0, YD = 0, ZD = 0;
