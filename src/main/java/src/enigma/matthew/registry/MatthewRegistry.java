@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import src.enigma.matthew.block.BlockPlayerTracker;
 import src.enigma.matthew.item.ItemVeinPickaxe;
 import src.enigma.matthew.tileentity.TileEntityPlayerTracker;
+import src.enigma.mod.EnigmaMod;
 
 public class MatthewRegistry {
 
@@ -33,7 +34,7 @@ public class MatthewRegistry {
         GameRegistry.registerTileEntity(TileEntityPlayerTracker.class, "tileEntityPlayerTracker");
     }
 
-    public static final Item itemVeinPickaxe = new ItemVeinPickaxe().setUnlocalizedName("vein_pickaxe").setTextureName("vein_pickaxe").setCreativeTab(CreativeTabs.tabTools);
+    public static final Item itemVeinPickaxe = new ItemVeinPickaxe().setUnlocalizedName("vein_pickaxe").setTextureName(EnigmaMod.MODID + ":" + "vein_pickaxe").setCreativeTab(CreativeTabs.tabTools);
     public static void registerItems(){
         GameRegistry.registerItem(itemVeinPickaxe, "vein_pickaxe");
     }
