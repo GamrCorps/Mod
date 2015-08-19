@@ -24,13 +24,24 @@ public class ItemVeinPickaxe extends ItemPickaxe {
         while (true) {
             if (queue.isEmpty()) break;
             int[] coords = queue.getNext();
-            if (world.getBlock(coords[0], coords[1], coords[2]) instanceof BlockOre || world.getBlock(coords[0], coords[1], coords[2]) instanceof BlockRedstoneOre) {
+            if (world.getBlock(coords[0], coords[1], coords[2]) instanceof BlockOre) {
                 Block block1 = world.getBlock(coords[0], coords[1], coords[2]);
                 breakBlock(world,world.getBlock(coords[0], coords[1], coords[2]), coords[0], coords[1], coords[2]);
                 for (int i = -1; i <= 1; i++) {
                     for (int j = -1; j <= 1; j++) {
                         for (int k = -1; k <= 1; k++) {
                             if (world.getBlock(coords[0] + i, coords[1] + j, coords[2] + k) == block1){
+                                queue.add(new int[]{coords[0] + i, coords[1] + j, coords[2] + k});
+                            }
+                        }
+                    }
+                }
+            } else if ( world.getBlock(coords[0], coords[1], coords[2]) instanceof BlockRedstoneOre) {
+                breakBlock(world,world.getBlock(coords[0], coords[1], coords[2]), coords[0], coords[1], coords[2]);
+                for (int i = -1; i <= 1; i++) {
+                    for (int j = -1; j <= 1; j++) {
+                        for (int k = -1; k <= 1; k++) {
+                            if (world.getBlock(coords[0] + i, coords[1] + j, coords[2] + k) instanceof BlockRedstoneOre){
                                 queue.add(new int[]{coords[0] + i, coords[1] + j, coords[2] + k});
                             }
                         }
