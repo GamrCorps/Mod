@@ -8,9 +8,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
-import java.util.ArrayList;
-import java.util.List;
+import src.enigma.mod.util.Queue;
 
 public class ItemVeinPickaxe extends ItemPickaxe {
     public ItemVeinPickaxe(){
@@ -59,28 +57,4 @@ public class ItemVeinPickaxe extends ItemPickaxe {
         gameWorld_.setBlockToAir(x, y, z);
     }
 
-} class Queue<T> {
-    private List<T> queue;
-
-    public Queue() {
-        queue = new ArrayList<T>();
-    }
-
-    public void add(T object) {
-        queue.add(object);
-    }
-
-    public T getNext() {
-        T temp = queue.get(0);
-        queue.remove(0);
-        return temp;
-    }
-
-    public int size() {
-        return queue.size();
-    }
-
-    public boolean isEmpty() {
-        return !(queue.size() > 0);
-    }
 }
