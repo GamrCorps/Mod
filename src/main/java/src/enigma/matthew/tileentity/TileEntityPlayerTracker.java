@@ -12,7 +12,6 @@ public class TileEntityPlayerTracker extends TileEntity {
     public static final double XD = 0, YD = 0, ZD = 0;
 
     public String playerName = "";
-    public static final String playerNameD = "expertgamer16985";
 
     public boolean online = false;
     public static final boolean onlineD = false;
@@ -55,7 +54,7 @@ public class TileEntityPlayerTracker extends TileEntity {
         this.Z = ZD;
     }
 
-    public String getStringMessage(){
+    public String getStringMessage() {
         return "Player: " + playerName + (online ? " (ONLINE) X:" + Math.floor(X) + " Y: " + Math.floor(Y) + " Z: " + Math.floor(Z) : "(OFFLINE)");
     }
 }
