@@ -59,12 +59,14 @@ public class ItemFlyingCarpet extends Item
         super.onUpdate(stack, world, thePlayer, par4, par5);
         {
             EntityPlayer player = (EntityPlayer) thePlayer;
+            y = -3;
 
-            int sneak = Minecraft.getMinecraft().gameSettings.keyBindSneak.getKeyCode();
 
             //=== Possible implementation ===
 
-            /*if (Keyboard.isKeyDown(sneak))
+            /*int sneak = Minecraft.getMinecraft().gameSettings.keyBindSneak.getKeyCode();
+
+            if (Keyboard.isKeyDown(sneak))
             {
                 y = -4;
             }
@@ -88,8 +90,8 @@ public class ItemFlyingCarpet extends Item
                 world.setBlock((int) Math.round(player.posX), (int) Math.round(player.posY) + y, (int) Math.round(player.posZ - 1), Blocks.glass, 0 ,2);
                 world.setBlock((int) Math.round(player.posX + 1), (int) Math.round(player.posY) + y, (int) Math.round(player.posZ + 1), Blocks.glass, 0 ,2);
                 world.setBlock((int) Math.round(player.posX + 1), (int) Math.round(player.posY) + y, (int) Math.round(player.posZ - 1), Blocks.glass, 0 ,2);
+                world.setBlock((int) Math.round(player.posX - 1), (int) Math.round(player.posY) + y, (int) Math.round(player.posZ - 1), Blocks.glass, 0 ,2);
                 world.setBlock((int) Math.round(player.posX - 1), (int) Math.round(player.posY) + y, (int) Math.round(player.posZ + 1), Blocks.glass, 0 ,2);
-                world.setBlock((int) Math.round(player.posX + 1), (int) Math.round(player.posY) + y, (int) Math.round(player.posZ + 1), Blocks.glass, 0 ,2);
 
             }
         }
