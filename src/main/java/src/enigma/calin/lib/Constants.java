@@ -14,6 +14,8 @@ public class Constants {
 
     //Items
     public static final String nameMolotov = "molotov";
+    public static final String nameFlyingCarpet = "flying carpet";
+
 
     //Blocks
 
