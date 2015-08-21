@@ -8,6 +8,13 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NBTTag {
+    enum Type {
+        INT,
+        BOOLEAN,
+        STRING,
+        DOUBLE,
+        FLOAT;
+    }
     String name();
-    String type();
+    Type type() default Type.INT;
 }
