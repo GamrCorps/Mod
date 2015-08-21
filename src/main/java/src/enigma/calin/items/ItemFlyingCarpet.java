@@ -1,30 +1,21 @@
 package src.enigma.calin.items;
-import cpw.mods.fml.common.Mod;
-import jdk.nashorn.internal.ir.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import org.lwjgl.input.Keyboard;
 import src.enigma.mod.EnigmaMod;
-import net.minecraft.world.World;
 
 /**
  * Created by Calin on 8/17/2015.
  **/
+
 public class ItemFlyingCarpet extends Item
 {
-    boolean isEnabled;
     boolean toggle;
     int y;
-    int toggleBlock;
 
     public ItemFlyingCarpet()
     {
@@ -36,10 +27,8 @@ public class ItemFlyingCarpet extends Item
 
     public void init()
     {
-        this.isEnabled = false;
         this.toggle = false;
-        this.y = -3;
-        this.toggleBlock = 0;
+        this.y = -1;
     }
 
     @Override
@@ -87,8 +76,6 @@ public class ItemFlyingCarpet extends Item
 
             if(this.toggle)
             {
-                    this.toggleBlock = 0;
-
                     world.setBlock((int) player.posX, (int) player.posY + y, (int) (player.posZ), Blocks.glass);
                     world.setBlock((int) Math.round(player.posX) + 1, (int) Math.round(player.posY) + y, (int) Math.round(player.posZ), Blocks.glass);
                     world.setBlock((int) Math.round(player.posX) - 1, (int) Math.round(player.posY) + y, (int) Math.round(player.posZ), Blocks.glass);
